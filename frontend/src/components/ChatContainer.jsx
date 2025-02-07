@@ -50,7 +50,7 @@ if(isMessagesLoading) return(
     >
 <div className='chat-image avatar' >
 <div className='size-10 rounded-full border '>
-<img src={message.senderId === authUser._id ? authUser.profilePic || "./avatar.png" : selectedUser.profilePic || "./avatar" } alt="" />
+<img src={message.senderId === authUser._id ? authUser.profilePic || "../../public/avatar.png" : selectedUser.profilePic || "../../public/avatar.png" } alt="" />
 </div>
 
   
