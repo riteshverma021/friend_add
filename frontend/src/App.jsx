@@ -5,19 +5,19 @@ import { Navigate } from 'react-router-dom'
 import Loginpage from './pages/Loginpage.jsx'
 import HOMEPAGE from "./pages/HOMEPAGE.jsx"
 import  SignupPage   from  "./pages/SignupPage.jsx"
-import SettingPage from "./pages/SettingPage.jsx"
+
 import ProfilePage from "./pages/ProfilePage.jsx"
 import Navbar from "./components/Navbar.jsx"
 import { authStore } from './store/useAuthStore.js'
 import {Loader } from "lucide-react"
 import Sidebar from './components/Sidebar.jsx'
-import { themeStore } from './store/useThemeStore.js'
+
 
 
 
 const App = () => {
 const {checkAuth,authUser, isCheckingAuth , onlineUser} = authStore()
-const {theme} = themeStore()
+
 
 useEffect(() => {
   checkAuth();
@@ -64,7 +64,7 @@ theme="dark"
 <Route    path='/'      element= {  authUser ?  <HOMEPAGE/> : <Navigate   to='/login'  /> }   />
 <Route path='/login' element= {   !authUser  ? <Loginpage/> : <Navigate   to='/'/>   } />
 <Route path='/signup' element={ !authUser  ?    <SignupPage/> : <Navigate  to="/"  />} />
-<Route path='/settings' element={<SettingPage/>} />
+
 <Route path='/profile' element={   authUser ?  <ProfilePage/>  : <Navigate   to='/login'  /> } />
 
 
